@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Halloween Quiz</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #2c2c2c;
+            color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 3rem;
+            color: #ff751a;
+            margin-bottom: 20px;
+        }
+
+        .section {
+            width: 80%;
+            max-width: 700px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #333;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
+            display: none;
+        }
+
+        .section.visible {
+            display: block;
+        }
+
+        .button {
+            padding: 15px 30px;
+            background-color: #ff751a;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: background-color 0.3s;
+        }
+
+        .button:hover {
+            background-color: #ff4500;
+        }
+
+        .questions {
+            margin-top: 20px;
+            display: none;
+        }
+
+        .questions.visible {
+            display: block;
+        }
+
+        .question {
+            margin-bottom: 15px;
+            text-align: left;
+        }
+
+        .question h4 {
+            cursor: pointer;
+            color: #ff751a;
+            margin: 0;
+            padding: 10px;
+            border: 1px solid #ff751a;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .question h4:hover {
+            background-color: #ff4500;
+        }
+
+        .question p {
+            display: none;
+            color: #f4f4f4;
+            margin-top: 5px;
+        }
+
+        .question p.active {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Halloween Quiz</h1>
+
+    <!-- Section 1: Introduction -->
+    <div id="section1" class="section visible">
+        <p>Halloween is celebrated every year on October 31st. It is a time for costumes, trick-or-treating, and spooky decorations. Let's explore its origins and traditions!</p>
+        <button class="button" onclick="showSlide('section2')">READY?</button>
+    </div>
+
+    <!-- Section 2: Questions about Halloween History -->
+    <div id="section2" class="section">
+        <div class="questions visible">
+            <div class="question">
+                <h4 onclick="toggleAnswer(this)">1. What was the original name of the festival?</h4>
+                <p>The original name was Samhain.</p>
+            </div>
+            <div class="question">
+                <h4 onclick="toggleAnswer(this)">2. When is Halloween celebrated?</h4>
+                <p>Halloween is celebrated on October 31st.</p>
+            </div>
+            <div class="question">
+                <h4 onclick="toggleAnswer(this)">3. Which ancient civilization first celebrated Halloween?</h4>
+                <p>The Celts were the first civilization to celebrate Halloween.</p>
+            </div>
+            <div class="question">
+                <h4 onclick="toggleAnswer(this)">4. What did the Celts believe happened on October 31st?</h4>
+                <p>The Celts believed the boundary between the living and dead was blurred.</p>
+            </div>
+            <div class="question">
+                <h4 onclick="toggleAnswer(this)">5. What did people do to ward off spirits?</h4>
+                <p>People lit bonfires and wore costumes to ward off spirits.</p>
+            </div>
+            <div class="question">
+                <h4 onclick="toggleAnswer(this)">6. What did Pope Gregory III declare?</h4>
+                <p>Pope Gregory III declared November 1st as a day to honor all saints.</p>
+            </div>
+            <div class="question">
+                <h4 onclick="toggleAnswer(this)">7. What is the evening before All Saints' Day known as?</h4>
+                <p>The evening before is known as All Hallows' Eve.</p>
+            </div>
+            <div class="question">
+                <h4 onclick="toggleAnswer(this)">8. What are some modern Halloween activities?</h4>
+                <p>Modern activities include trick-or-treating, carving pumpkins, and haunted houses.</p>
+            </div>
+        </div>
+        <button class="button" onclick="showSlide('section3')">CONTINUE</button>
+    </div>
+
+    <!-- Section 3: Halloween Traditions -->
+    <div id="section3" class="section">
+        <p>Halloween traditions vary worldwide. In the U.S., children dress up and go trick-or-treating. In Mexico, Día de los Muertos coincides with Halloween, celebrating and honoring deceased loved ones.</p>
+        <button class="button" onclick="showSlide('section4')">READY?</button>
+    </div>
+
+    <!-- Section 4: Questions about Halloween Traditions -->
+    <div id="section4" class="section">
+        <div class="questions visible">
+            <div class="question">
+                <h4 onclick="toggleAnswer(this)">1. What is a common Halloween tradition in the U.S.?</h4>
+                <p>A common tradition is trick-or-treating, where children collect candy.</p>
+            </div>
+            <div class="question">
+                <h4 onclick="toggleAnswer(this)">2. What does Día de los Muertos celebrate?</h4>
+                <p>Día de los Muertos celebrates and honors deceased loved ones.</p>
+            </div>
+            <div class="question">
+                <h4 onclick="toggleAnswer(this)">3. What are some traditional activities in Ireland?</h4>
+                <p>Traditional activities include telling ghost stories and lighting bonfires.</p>
+            </div>
+            <div class="question">
+                <h4 onclick="toggleAnswer(this)">4. What do families create for Día de los Muertos?</h4>
+                <p>Families create altars and offer food to honor their deceased.</p>
+            </div>
+            <div class="question">
+                <h4 onclick="toggleAnswer(this)">5. How does Halloween promote creativity?</h4>
+                <p>Halloween promotes creativity through costume design and decoration.</p>
+            </div>
+            <div class="question">
+                <h4 onclick="toggleAnswer(this)">6. What role does candy play in Halloween?</h4>
+                <p>Candy is central to Halloween, especially for trick-or-treating.</p>
+            </div>
+            <div class="question">
+                <h4 onclick="toggleAnswer(this)">7. Why is Halloween considered spooky?</h4>
+                <p>Halloween is spooky due to its themes of ghosts, monsters, and the supernatural.</p>
+            </div>
+            <div class="question">
+                <h4 onclick="toggleAnswer(this)">8. What is Halloween's significance in modern culture?</h4>
+                <p>Halloween emphasizes community, creativity, and seasonal celebration.</p>
+            </div>
+        </div>
+        <button class="button" onclick="showSlide('section5')">CONTINUE</button>
+    </div>
+
+    <!-- Section 5: Halloween Foods -->
+    <div id="section5" class="section">
+        <p>In Slovakia, Halloween is not traditionally celebrated, but some customs exist. On November 1st, families light candles and visit cemeteries to remember loved ones. Special foods are prepared to share among family and friends.</p>
+        <button class="button" onclick="showSlide('section6')">READY?</button>
+    </div>
+
+    <!-- Section 6: Questions about Halloween Foods -->
+    <div id="section6" class="section">
+        <div class="questions visible">
+            <div class="question">
+                <h4 onclick="toggleAnswer(this)">1. How is Halloween celebrated in Slovakia?</h4>
+                <p>Halloween is not traditionally celebrated, but customs related to honoring the dead exist.</p>
+            </div>
+            <div class="question">
+                <h4 onclick="toggleAnswer(this)">2. What foods are popular during Halloween?</h4>
+                <p>Foods like pumpkin soup and pumpkin pie are popular during Halloween.</p>
+            </div>
+            <div class="question">
+                <h4 onclick="toggleAnswer(this)">3. What is celebrated on November 1st in Slovakia?</h4>
+                <p>All Saints' Day is celebrated on November 1st.</p>
+            </div>
+            <div class="question">
+                <h4 onclick="toggleAnswer(this)">4. What do families do on All Saints' Day?</h4>
+                <p>Families visit cemeteries to light candles and place flowers on graves.</p>
+            </div>
+            <div class="question">
+                <h4 onclick="toggleAnswer(this)">5. What ingredients are used in Slovak pastries?</h4>
+                <p>Seasonal ingredients like apples and nuts are often used in pastries.</p>
+            </div>
+            <div class="question">
+                <h4 onclick="toggleAnswer(this)">6. What is a growing trend in Slovakia regarding Halloween?</h4>
+                <p>Halloween is becoming more popular, with people sharing treats and celebrating.</p>
+            </div>
+            <div class="question">
+                <h4 onclick="toggleAnswer(this)">7. What is the significance of festive foods during this time?</h4>
+                <p>Festive foods are prepared to share as part of remembrance.</p>
+            </div>
+        </div>
+        <button class="button" onclick="showEnd()">The End</button>
+    </div>
+
+    <!-- End Section -->
+    <div id="end" class="section">
+        <p>Thank you for participating in the Halloween Quiz! We hope you had fun and learned something new about Halloween traditions and history. Remember to celebrate safely and enjoy the festivities!</p>
+    </div>
+
+    <script>
+        function showSlide(sectionId) {
+            const sections = document.querySelectorAll('.section');
+            sections.forEach(section => {
+                section.classList.remove('visible');
+            });
+            document.getElementById(sectionId).classList.add('visible');
+        }
+
+        function toggleAnswer(questionElement) {
+            const answer = questionElement.nextElementSibling;
+            answer.classList.toggle('active');
+        }
+
+        function showEnd() {
+            const sections = document.querySelectorAll('.section');
+            sections.forEach(section => {
+                section.classList.remove('visible');
+            });
+            document.getElementById('end').classList.add('visible');
+        }
+    </script>
+
+</body>
+</html>
